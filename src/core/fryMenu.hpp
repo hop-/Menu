@@ -2,7 +2,6 @@
 #define CORE_FRYMENU_HPP
 
 #include <base/dishMenu.hpp>
-#include <base/dish.hpp>
 
 namespace Core
 {
@@ -10,7 +9,10 @@ namespace Core
 class FryMenu : public Base::DishMenu
 {
 public:
-    Base::Dish* GetDish() const override;
+    FryMenu();
+
+public:
+    void AddIngredient(Base::Dish* dish) const override;
 };
 
 } // namespace Core

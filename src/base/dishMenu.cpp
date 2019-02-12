@@ -1,4 +1,5 @@
 #include "dishMenu.hpp"
+#include "dish.hpp"
 
 namespace Base
 {
@@ -17,6 +18,13 @@ const std::string& DishMenu::DishName() const
 unsigned DishMenu::DishPrice() const
 {
     return m_dishPrice;
+}
+
+Dish* DishMenu::GetDish() const
+{
+    Dish* dish = new Dish(DishName(), DishPrice());
+    AddIngredient(dish);
+    return dish;
 }
 
 } // namespace Base

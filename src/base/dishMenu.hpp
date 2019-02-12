@@ -18,9 +18,12 @@ public:
     virtual ~DishMenu() = default;
 
 public:
-    virtual Dish* GetDish() const = 0;
+    Dish* GetDish() const;
     const std::string& DishName() const;
     unsigned DishPrice() const;
+
+protected:
+    virtual void AddIngredient(Dish* dish) const = 0;
 };
 
 } // namespace Base

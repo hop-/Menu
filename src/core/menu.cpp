@@ -1,4 +1,5 @@
 #include "menu.hpp"
+#include "fryMenu.hpp"
 
 #include <base/dish.hpp>
 
@@ -15,6 +16,7 @@ Menu& Menu::Instance()
 
 Menu::Menu()
 {
+    m_dishes.push_back(new FryMenu);
 }
 
 void Menu::Start()
@@ -50,6 +52,7 @@ void Menu::Start()
 
 Base::DishMenu* Menu::Select(int dishID)
 {
+    std::cout << m_dishes.size() << std::endl;
     if (dishID < 0 || dishID >= static_cast<int>(m_dishes.size()))
     {
         return nullptr;
@@ -75,6 +78,7 @@ void Menu::AddToBill(Base::Dish* dish)
 
 void Menu::ShowBill()
 {
+    std::cout << "====================" << std::endl;
     int overall = 0;
     for (const auto& d: m_bill.List())
     {

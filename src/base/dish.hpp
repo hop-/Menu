@@ -2,24 +2,27 @@
 #define DISH_HPP
 
 #include <string>
-#include <vector>
+#include <set>
 
 namespace Base
 {
 
 class Dish
 {
-    int m_price;
     const std::string m_name;
-    std::vector<std::string> ingridients;
+    unsigned m_price;
+    std::set<std::string> m_ingredients;
 
 public:
-    Dish(std::string name, int price);
+    Dish(const std::string& name, unsigned price);
+    ~Dish() = default;
 
 public:
-    void AddPrice(int price);
+    void AddPrice(unsigned price);
     int Price() const;
     const std::string& Name();
+    bool AddIngredient(const std::string& ingredientName);
+    const std::set<std::string>& Ingredients() const;
 };
 
 } // namespace Base

@@ -3,9 +3,13 @@
 namespace Core
 {
 
-Base::Dish* FryMenu::GetDish() const
+FryMenu::FryMenu()
+    : DishMenu("Fry", 500)
 {
+}
 
+void FryMenu::AddIngredient(Base::Dish* dish) const
+{
 }
 
 }
