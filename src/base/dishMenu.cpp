@@ -10,20 +10,20 @@ DishMenu::DishMenu(const std::string& dishName, unsigned price)
 {
 }
 
-const std::string& DishMenu::DishName() const
+const std::string& DishMenu::dishName() const
 {
     return m_dishName;
 }
 
-unsigned DishMenu::DishPrice() const
+unsigned DishMenu::dishPrice() const
 {
     return m_dishPrice;
 }
 
-Dish* DishMenu::GetDish() const
+Dish* DishMenu::getDish() const
 {
-    Dish* dish = new Dish(DishName(), DishPrice());
-    AddIngredient(dish);
+    Dish* dish = new Dish(dishName(), dishPrice());
+    addIngredient(dish);
     return dish;
 }
 

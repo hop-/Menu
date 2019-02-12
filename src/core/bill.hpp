@@ -14,7 +14,7 @@ class Bill
     std::vector<std::pair<std::string, int>> m_dishes;
 
 public:
-    void AddDish(Base::Dish* dish);
+    void addDish(Base::Dish* dish);
     const std::vector<std::pair<std::string, int>>& List() const;
 };
 

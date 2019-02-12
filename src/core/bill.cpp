@@ -3,12 +3,12 @@
 namespace Core
 {
 
-void Bill::AddDish(Base::Dish* dish)
+void Bill::addDish(Base::Dish* dish)
 {
-    std::string dishName = dish->Name();
-    unsigned price = dish->Price();
+    std::string dishName = dish->name();
+    unsigned price = dish->price();
     std::string ingredients;
-    for (auto& i : dish->Ingredients())
+    for (auto& i : dish->ingredients())
     {
         ingredients += i;
         ingredients += " ";

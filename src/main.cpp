@@ -1,8 +1,14 @@
 #include <iostream>
 #include <core/menu.hpp>
+#include <gui/frame.hpp>
+
+#include <QApplication>
 
 int main(int argc, char** argv)
 {
-    Core::Menu::Instance().Start();
-    return 0;
+    QApplication app(argc, argv);
+    Gui::Frame frame;
+    frame.show();
+    //Core::Menu::Instance().Start();
+    return app.exec();
 }

@@ -18,11 +18,11 @@ public:
     ~Dish() = default;
 
 public:
-    void AddPrice(unsigned price);
-    int Price() const;
-    const std::string& Name();
-    bool AddIngredient(const std::string& ingredientName);
-    const std::set<std::string>& Ingredients() const;
+    void addPrice(unsigned price);
+    int price() const;
+    const std::string& name();
+    bool addIngredient(const std::string& ingredientName);
+    const std::set<std::string>& ingredients() const;
 };
 
 } // namespace Base

@@ -16,7 +16,7 @@ class Menu
     Bill m_bill;
 
 public:
-    static Menu& Instance();
+    static Menu& instance();
     Menu(const Menu&) = delete;
     void operator=(const Menu&) = delete;
 
@@ -24,13 +24,14 @@ private:
     Menu();
 
 public:
-    void Start();
+    void start();
+    const std::vector<Base::DishMenu*>& dishes();
 
 private:
-    void Show();
-    void ShowBill();
-    Base::DishMenu* Select(int dishID);
-    void AddToBill(Base::Dish* dish);
+    void show();
+    void showBill();
+    Base::DishMenu* select(int dishID);
+    void addToBill(Base::Dish* dish);
 };
 
 } // namespace Core

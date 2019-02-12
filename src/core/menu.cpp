@@ -8,7 +8,7 @@
 namespace Core
 {
 
-Menu& Menu::Instance()
+Menu& Menu::instance()
 {
     static Menu instance;
     return instance;
@@ -19,38 +19,43 @@ Menu::Menu()
     m_dishes.push_back(new FryMenu);
 }
 
-void Menu::Start()
+void Menu::start()
 {
     while (true)
     {
-        Show();
+        show();
         int dishID;
         std::cin >> dishID;
         if (dishID == -1)
         {
-            ShowBill();
+            showBill();
             break;
         }
         if (dishID == -2)
         {
             break;
         }
-        Base::DishMenu* dishMenu = Select(dishID);
+        Base::DishMenu* dishMenu = select(dishID);
         if (dishMenu == nullptr)
         {
             continue;
         }
-        Base::Dish* dish = dishMenu->GetDish();
+        Base::Dish* dish = dishMenu->getDish();
         if (dish == nullptr)
         {
             continue;
         }
-        AddToBill(dish);
+        addToBill(dish);
         delete dish;
     }
 }
 
-Base::DishMenu* Menu::Select(int dishID)
+const std::vector<Base::DishMenu *> &Menu::dishes()
+{
+    return m_dishes;
+}
+
+Base::DishMenu* Menu::select(int dishID)
 {
     std::cout << m_dishes.size() << std::endl;
     if (dishID < 0 || dishID >= static_cast<int>(m_dishes.size()))
@@ -60,23 +65,23 @@ Base::DishMenu* Menu::Select(int dishID)
     return m_dishes[dishID];
 }
 
-void Menu::Show()
+void Menu::show()
 {
     std::cout << "(-2) Exit" << std::endl;
     std::cout << "(-1) Order" << std::endl;
     std::cout << "Choose a dish" << std::endl;
     for (unsigned i = 0; i < m_dishes.size(); i++)
     {
-        std::cout << "(" << i << ") " << m_dishes[i]->DishName() << " - " << m_dishes[i]->DishPrice() << std::endl;
+        std::cout << "(" << i << ") " << m_dishes[i]->dishName() << " - " << m_dishes[i]->dishPrice() << std::endl;
     }
 }
 
-void Menu::AddToBill(Base::Dish* dish)
+void Menu::addToBill(Base::Dish* dish)
 {
-    m_bill.AddDish(dish);
+    m_bill.addDish(dish);
 }
 
-void Menu::ShowBill()
+void Menu::showBill()
 {
     std::cout << "====================" << std::endl;
     int overall = 0;

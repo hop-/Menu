@@ -9,28 +9,28 @@ Dish::Dish(const std::string& name, unsigned price)
 {
 }
 
-void Dish::AddPrice(unsigned price)
+void Dish::addPrice(unsigned price)
 {
     m_price += price;
 }
 
-int Dish::Price() const
+int Dish::price() const
 {
     return m_price;
 }
 
-const std::string& Dish::Name()
+const std::string& Dish::name()
 {
     return m_name;
 }
 
-bool Dish::AddIngredient(const std::string& ingredientName)
+bool Dish::addIngredient(const std::string& ingredientName)
 {
     auto ret = m_ingredients.insert(ingredientName);
     return ret.second;
 }
 
-const std::set<std::string>& Dish::Ingredients() const
+const std::set<std::string>& Dish::ingredients() const
 {
     return m_ingredients;
 }

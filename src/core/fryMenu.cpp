@@ -8,7 +8,7 @@ FryMenu::FryMenu()
 {
 }
 
-void FryMenu::AddIngredient(Base::Dish* dish) const
+void FryMenu::addIngredient(Base::Dish* dish) const
 {
 }
 

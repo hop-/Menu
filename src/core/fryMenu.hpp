@@ -12,7 +12,7 @@ public:
     FryMenu();
 
 public:
-    void AddIngredient(Base::Dish* dish) const override;
+    void addIngredient(Base::Dish* dish) const override;
 };
 
 } // namespace Core
