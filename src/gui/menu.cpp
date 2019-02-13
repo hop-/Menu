@@ -29,7 +29,7 @@ void Menu::createLayout()
     {
         // TODO
         auto* b = new DishButton(d);
-        //connect(b, &Gui::DishButton::dishSelected, this, &Gui::Menu::openDishMenu);
+        connect(b, &Gui::DishButton::dishSelected, this, &Gui::Menu::dishSelected);
         grid->addWidget(b, i, j);
         j++;
         if (j == 3)
@@ -40,6 +40,7 @@ void Menu::createLayout()
     }
     QScrollArea* scrollArea = new QScrollArea;
     scrollArea->setWidget(menuWidget);
+    scrollArea->setAlignment(Qt::AlignHCenter);
     layout()->addWidget(scrollArea);
     auto* b = new QPushButton("Order");
     layout()->addWidget(b);

@@ -12,7 +12,7 @@ namespace Core
 
 class Menu
 {
-    std::vector<Base::DishMenu*> m_dishes;
+    std::vector<Base::Dish*> m_dishes;
     Bill m_bill;
 
 public:
@@ -24,14 +24,7 @@ private:
     Menu();
 
 public:
-    void start();
-    const std::vector<Base::DishMenu*>& dishes();
-
-private:
-    void show();
-    void showBill();
-    Base::DishMenu* select(int dishID);
-    void addToBill(Base::Dish* dish);
+    const std::vector<Base::Dish*>& dishes();
 };
 
 } // namespace Core

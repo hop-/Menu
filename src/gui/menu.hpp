@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include <base/dish.hpp>
+
 namespace Gui
 {
 
@@ -12,6 +14,9 @@ class Menu : public QWidget
 
 public:
     Menu();
+
+signals:
+    void dishSelected(Base::Dish* dish);
 
 private:
     void createLayout();

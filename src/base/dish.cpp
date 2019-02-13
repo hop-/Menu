@@ -3,8 +3,9 @@
 namespace Base
 {
 
-Dish::Dish(const std::string& name, unsigned price)
+Dish::Dish(Type type, const std::string& name, unsigned price)
     : m_name(name)
+    , m_type(type)
     , m_price(price)
 {
 }
@@ -19,9 +20,14 @@ int Dish::price() const
     return m_price;
 }
 
-const std::string& Dish::name()
+const std::string& Dish::name() const
 {
     return m_name;
+}
+
+Dish::Type Dish::type() const
+{
+    return m_type;
 }
 
 bool Dish::addIngredient(const std::string& ingredientName)

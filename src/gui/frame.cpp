@@ -1,15 +1,5 @@
 #include "frame.hpp"
-#include "dishButton.hpp"
-#include "menu.hpp"
-
-#include <core/menu.hpp>
-
-#include <QVBoxLayout>
-#include <QGridLayout>
-
-#include <QWidget>
-#include <QScrollArea>
-#include <QIcon>
+#include "fryMenu.hpp"
 
 namespace Gui
 {
@@ -20,10 +10,34 @@ Frame::Frame()
     resize(1024, 768);
     setFixedSize(this->width(), this->height());
     setCentralWidget(m_menuWidget);
+    connect(m_menuWidget, &Gui::Menu::dishSelected, this, &Gui::Frame::openDishMenu);
+    createDishMenuList();
 }
 
-void Frame::openDishMenu(Base::DishMenu *dish)
+void Frame::openDishMenu(Base::Dish* dish)
 {
+    const auto dishMenu = m_dishMenus.find(dish->type());
+    if (dishMenu == m_dishMenus.end())
+    {
+        return;
+    }
+    dishMenu->second->show();
+}
+
+void Frame::createDishMenuList()
+{
+    DishMenu* dishMenu = new FryMenu;
+    dishMenu->init();
+    m_dishMenus[Base::Dish::Type::Fry] = dishMenu;
+    dishMenu = new FryMenu;
+    dishMenu->init();
+    m_dishMenus[Base::Dish::Type::Pizza] = dishMenu;
+    dishMenu = new FryMenu;
+    dishMenu->init();
+    m_dishMenus[Base::Dish::Type::Soup] = dishMenu;
+    dishMenu = new FryMenu;
+    dishMenu->init();
+    m_dishMenus[Base::Dish::Type::ChefSpecial] = dishMenu;
 }
 
 } // namespace Gui

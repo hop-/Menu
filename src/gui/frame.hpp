@@ -1,11 +1,12 @@
 #ifndef GUI_FRAME_HPP
 #define GUI_FRAME_HPP
 
-#include <base/dishMenu.hpp>
+#include "menu.hpp"
+#include "dishMenu.hpp"
+
+#include <base/dish.hpp>
 
 #include <QMainWindow>
-
-#include  <vector>
 
 namespace Gui
 {
@@ -18,10 +19,14 @@ public:
     Frame();
 
 private slots:
-    void openDishMenu(Base::DishMenu* dish);
+    void openDishMenu(Base::Dish* dish);
 
 private:
-    QWidget* m_menuWidget;
+    void createDishMenuList();
+
+private:
+    Menu* m_menuWidget;
+    std::map<Base::Dish::Type, DishMenu*> m_dishMenus;
 };
 
 } // namespace Gui

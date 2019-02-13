@@ -22,9 +22,10 @@ unsigned DishMenu::dishPrice() const
 
 Dish* DishMenu::getDish() const
 {
-    Dish* dish = new Dish(dishName(), dishPrice());
-    addIngredient(dish);
-    return dish;
+    //Dish* dish = new Dish(dishName(), dishPrice());
+    //addIngredient(dish);
+    //return dish;
+    return nullptr;
 }
 
 } // namespace Base

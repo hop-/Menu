@@ -13,16 +13,16 @@ class DishButton : public QPushButton
     Q_OBJECT
 
 public:
-    DishButton(Base::DishMenu* dish);
+    DishButton(Base::Dish* dish);
 
 private slots:
     void onClick();
 
 signals:
-    void dishSelected(Base::DishMenu* dish);
+    void dishSelected(Base::Dish* dish);
 
 private:
-    Base::DishMenu* m_dish;
+    Base::Dish* m_dish;
 };
 
 } // namespace Gui

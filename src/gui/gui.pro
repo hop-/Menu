@@ -7,8 +7,12 @@ INCLUDEPATH += "../"
 
 HEADERS = frame.hpp \
     dishButton.hpp \
-    menu.hpp
+    menu.hpp \
+    dishMenu.hpp \
+    fryMenu.hpp
 
 SOURCES = frame.cpp \
     dishButton.cpp \
-    menu.cpp
+    menu.cpp \
+    dishMenu.cpp \
+    fryMenu.cpp
