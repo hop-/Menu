@@ -5,6 +5,8 @@
 
 #include <QMainWindow>
 
+#include  <vector>
+
 namespace Gui
 {
 
@@ -19,11 +21,7 @@ private slots:
     void openDishMenu(Base::DishMenu* dish);
 
 private:
-    void createLayout();
-
-private:
-    QLayout* m_layout;
-    QWidget* m_widget;
+    QWidget* m_menuWidget;
 };
 
 } // namespace Gui

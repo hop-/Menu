@@ -6,7 +6,9 @@ QMAKE_CXXFLAGS += -std=c++11
 INCLUDEPATH += "../"
 
 HEADERS = frame.hpp \
-    dishButton.hpp
+    dishButton.hpp \
+    menu.hpp
 
 SOURCES = frame.cpp \
-    dishButton.cpp
+    dishButton.cpp \
+    menu.cpp
