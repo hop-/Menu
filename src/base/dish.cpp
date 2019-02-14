@@ -7,12 +7,8 @@ Dish::Dish(Type type, const std::string& name, unsigned price)
     : m_name(name)
     , m_type(type)
     , m_price(price)
+    , m_ingredients()
 {
-}
-
-void Dish::addPrice(unsigned price)
-{
-    m_price += price;
 }
 
 int Dish::price() const
@@ -30,10 +26,15 @@ Dish::Type Dish::type() const
     return m_type;
 }
 
-bool Dish::addIngredient(const std::string& ingredientName)
+bool Dish::addIngredient(const Ingredient &ingredient)
 {
-    auto ret = m_ingredients.insert(ingredientName);
-    return ret.second;
+    auto ret = m_ingredients.insert(ingredient.name());
+    if (ret.second)
+    {
+        m_price += ingredient.price();
+        return true;
+    }
+    return false;
 }
 
 const std::set<std::string>& Dish::ingredients() const

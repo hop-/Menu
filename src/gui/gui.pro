@@ -9,10 +9,18 @@ HEADERS = frame.hpp \
     dishButton.hpp \
     menu.hpp \
     dishMenu.hpp \
-    fryMenu.hpp
+    fryMenu.hpp \
+    dishImage.hpp \
+    pizzaMenu.hpp \
+    soupMenu.hpp \
+    chefDishMenu.hpp
 
 SOURCES = frame.cpp \
     dishButton.cpp \
     menu.cpp \
     dishMenu.cpp \
-    fryMenu.cpp
+    fryMenu.cpp \
+    dishImage.cpp \
+    pizzaMenu.cpp \
+    soupMenu.cpp \
+    chefDishMenu.cpp

@@ -1,5 +1,8 @@
 #include "frame.hpp"
 #include "fryMenu.hpp"
+#include "soupMenu.hpp"
+#include "pizzaMenu.hpp"
+#include "chefDishMenu.hpp"
 
 namespace Gui
 {
@@ -29,13 +32,13 @@ void Frame::createDishMenuList()
     DishMenu* dishMenu = new FryMenu;
     dishMenu->init();
     m_dishMenus[Base::Dish::Type::Fry] = dishMenu;
-    dishMenu = new FryMenu;
+    dishMenu = new PizzaMenu;
     dishMenu->init();
     m_dishMenus[Base::Dish::Type::Pizza] = dishMenu;
-    dishMenu = new FryMenu;
+    dishMenu = new SoupMenu;
     dishMenu->init();
     m_dishMenus[Base::Dish::Type::Soup] = dishMenu;
-    dishMenu = new FryMenu;
+    dishMenu = new ChefDishMenu;
     dishMenu->init();
     m_dishMenus[Base::Dish::Type::ChefSpecial] = dishMenu;
 }

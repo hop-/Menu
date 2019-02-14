@@ -1,5 +1,6 @@
-#ifndef FRYMENU_HPP
-#define FRYMENU_HPP
+#ifndef PIZZAMENU_HPP
+#define PIZZAMENU_HPP
+
 
 #include "dishMenu.hpp"
 
@@ -9,12 +10,12 @@
 
 namespace Gui {
 
-class FryMenu : public DishMenu
+class PizzaMenu : public DishMenu
 {
     Q_OBJECT
 
 public:
-    FryMenu();
+    PizzaMenu();
 
     // DishMenu interface
 protected:
@@ -22,14 +23,10 @@ protected:
     std::set<Base::Ingredient> ingredients() override;
 
 private:
-    QGroupBox* m_sauceGroup;
-    QRadioButton* m_cheeseSauce;
-    QRadioButton* m_bbqSauce;
-    QRadioButton* m_chiliSauce;
     QCheckBox* m_redPepper;
-    QCheckBox* m_blackPepper;
+    QCheckBox* m_bbqSauce;
 };
 
 } // namespace Gui
 
-#endif // FRYMENU_HPP
+#endif // PIZZAMENU_HPP

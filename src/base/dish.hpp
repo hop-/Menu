@@ -1,6 +1,8 @@
 #ifndef DISH_HPP
 #define DISH_HPP
 
+#include "ingredient.hpp"
+
 #include <string>
 #include <set>
 
@@ -12,7 +14,7 @@ class Dish
 public:
     enum class Type
     {
-        Fry,
+        Fry = 0,
         Pizza,
         Soup,
         ChefSpecial
@@ -20,19 +22,17 @@ public:
 
 public:
     Dish(Type type, const std::string& name, unsigned price);
-    ~Dish() = default;
 
 public:
-    void addPrice(unsigned price);
     int price() const;
     const std::string& name() const;
     Type type() const;
-    bool addIngredient(const std::string& ingredientName);
+    bool addIngredient(const Ingredient& ingredient);
     const std::set<std::string>& ingredients() const;
 
 private:
-    const std::string m_name;
-    const Type m_type;
+    std::string m_name;
+    Type m_type;
     unsigned m_price;
     std::set<std::string> m_ingredients;
 };
