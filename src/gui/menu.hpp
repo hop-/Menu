@@ -17,6 +17,7 @@ public:
 
 signals:
     void dishSelected(Base::Dish* dish);
+    void order();
 
 private:
     void createLayout();

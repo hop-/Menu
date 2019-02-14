@@ -21,11 +21,16 @@ public:
     DishMenu(QString resPath, Base::Dish dish);
     void init();
 
+    // QDialog interface
+public slots:
+    void accept();
+
 protected slots:
     void onNewIngredients();
 
 signals:
     void newIngredientSet();
+    void acceptDish(Base::Dish dish);
 
 protected:
     virtual QWidget* createIngridientsMenu() = 0;

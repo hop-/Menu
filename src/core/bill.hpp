@@ -16,6 +16,7 @@ class Bill
 public:
     void addDish(Base::Dish* dish);
     const std::vector<std::pair<std::string, int>>& List() const;
+    std::string bill() const;
 };
 
 } // namespace Core

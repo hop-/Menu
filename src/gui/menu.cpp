@@ -43,6 +43,7 @@ void Menu::createLayout()
     scrollArea->setAlignment(Qt::AlignHCenter);
     layout()->addWidget(scrollArea);
     auto* b = new QPushButton("Order");
+    connect(b, SIGNAL(clicked(bool)), this, SIGNAL(order()));
     layout()->addWidget(b);
 }
 

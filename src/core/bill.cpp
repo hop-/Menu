@@ -1,4 +1,5 @@
 #include "bill.hpp"
+#include <iostream>
 
 namespace Core
 {
@@ -25,6 +26,19 @@ void Bill::addDish(Base::Dish* dish)
 const std::vector<std::pair<std::string, int>>& Bill::List() const
 {
     return m_dishes;
+}
+
+std::string Bill::bill() const
+{
+    std::string bill;
+    unsigned overall = 0;
+    for (auto& d : m_dishes)
+    {
+        overall += d.second;
+        bill += d.first + "  " + std::to_string(d.second) + "\n";
+    }
+    bill += "Overall: " + std::to_string(overall);
+    return bill;
 }
 
 } // namespace Core

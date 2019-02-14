@@ -46,6 +46,12 @@ void DishMenu::init()
     hide();
 }
 
+void DishMenu::accept()
+{
+    QDialog::accept();
+    emit acceptDish(m_finalDish);
+}
+
 void DishMenu::onNewIngredients()
 {
     DishImage dishImage(m_resPath + m_dishImgName);

@@ -5,6 +5,7 @@
 #include "dishMenu.hpp"
 
 #include <base/dish.hpp>
+#include <core/bill.hpp>
 
 #include <QMainWindow>
 
@@ -20,6 +21,8 @@ public:
 
 private slots:
     void openDishMenu(Base::Dish* dish);
+    void addNewDish(Base::Dish dish);
+    void onOrder();
 
 private:
     void createDishMenuList();
@@ -27,6 +30,7 @@ private:
 private:
     Menu* m_menuWidget;
     std::map<Base::Dish::Type, DishMenu*> m_dishMenus;
+    Core::Bill m_bill;
 };
 
 } // namespace Gui

@@ -22,7 +22,7 @@ const std::string &Ingredient::name() const
 
 unsigned Ingredient::price() const
 {
-    m_price;
+    return m_price;
 }
 
 }
