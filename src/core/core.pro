@@ -4,12 +4,8 @@ QMAKE_CXXFLAGS += -std=c++11
 
 INCLUDEPATH += "../"
 
-HEADERS =   selector.hpp \
-    bill.hpp \
-    fryMenu.hpp \
+HEADERS = bill.hpp \
     menu.hpp \
 
-SOURCES =   selector.cpp \
-    bill.cpp \
-    fryMenu.cpp \
+SOURCES = bill.cpp \
     menu.cpp \

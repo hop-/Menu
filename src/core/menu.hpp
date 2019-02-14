@@ -1,8 +1,6 @@
 #ifndef CORE_MENU_HPP
 #define CORE_MENU_HPP
 
-#include <base/dishMenu.hpp>
-
 #include <core/bill.hpp>
 
 #include <vector>

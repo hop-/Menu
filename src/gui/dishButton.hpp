@@ -3,7 +3,7 @@
 
 #include <QPushButton>
 
-#include <base/dishMenu.hpp>
+#include <base/dish.hpp>
 
 namespace Gui
 {
